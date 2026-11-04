@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Higgins Auto Detailing | Mobile Detailing & Instant Estimate</title>
-    <meta name="description" content="Mobile car detailing by Keegan Trey Higgins. Build an instant price estimate and text a booking request.">
+    <meta name="theme-color" content="#0d0e10">
+    <title>Higgins Automotive Detailing | Mobile Interior Detailing in Livingston County, MI</title>
+    <meta name="description" content="Higgins Automotive Detailing provides mobile interior detailing in Livingston County, Michigan. Build an instant estimate and text a booking request.">
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
-    <meta property="og:title" content="Higgins Auto Detailing">
-    <meta property="og:description" content="Mobile car detailing. Build an instant estimate and text Keegan to book.">
+    <meta property="og:title" content="Higgins Automotive Detailing | Mobile Interior Detailing in Livingston County, MI">
+    <meta property="og:description" content="Mobile interior detailing in Livingston County, Michigan. Build an instant estimate and text Keegan to book.">
     <meta property="og:image" content="https://higginsautodetailing.com/og.png">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AutomotiveBusiness",
+            "name": "Higgins Automotive Detailing",
+            "url": "https://higginsautodetailing.com/",
+            "email": "keeganhig@gmail.com",
+            "image": "https://higginsautodetailing.com/logo.webp",
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Livingston County, Michigan"
+            },
+            "priceRange": "$115-$225",
+            "sameAs": ["https://www.tiktok.com/@higgins_automotiv_detail"]
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,37 +38,36 @@
             theme: {
                 extend: {
                     colors: {
-                        black: 'rgb(var(--color-ink) / <alpha-value>)',
-                        white: 'rgb(var(--color-white) / <alpha-value>)',
+                        black: 'rgb(var(--bg-rgb) / <alpha-value>)',
+                        white: 'rgb(var(--text-rgb) / <alpha-value>)',
                         slate: {
-                            50: 'rgb(var(--color-slate-50) / <alpha-value>)',
-                            100: 'rgb(var(--color-slate-100) / <alpha-value>)',
-                            200: 'rgb(var(--color-slate-200) / <alpha-value>)',
-                            300: 'rgb(var(--color-slate-300) / <alpha-value>)',
-                            400: 'rgb(var(--color-slate-400) / <alpha-value>)',
-                            500: 'rgb(var(--color-slate-500) / <alpha-value>)',
-                            600: 'rgb(var(--color-slate-600) / <alpha-value>)',
-                            700: 'rgb(var(--color-slate-700) / <alpha-value>)',
-                            800: 'rgb(var(--color-slate-800) / <alpha-value>)',
-                            900: 'rgb(var(--color-slate-900) / <alpha-value>)',
-                            950: 'rgb(var(--color-slate-950) / <alpha-value>)'
+                            50: 'rgb(var(--text-rgb) / <alpha-value>)',
+                            100: 'rgb(var(--text-rgb) / <alpha-value>)',
+                            200: 'rgb(var(--text-rgb) / <alpha-value>)',
+                            300: 'rgb(var(--silver-rgb) / <alpha-value>)',
+                            400: 'rgb(var(--muted-rgb) / <alpha-value>)',
+                            500: 'rgb(var(--muted-rgb) / <alpha-value>)',
+                            600: 'rgb(var(--muted-rgb) / <alpha-value>)',
+                            700: 'rgb(var(--border-rgb) / <alpha-value>)',
+                            800: 'rgb(var(--border-rgb) / <alpha-value>)',
+                            900: 'rgb(var(--surface-rgb) / <alpha-value>)',
+                            950: 'rgb(var(--bg-rgb) / <alpha-value>)'
                         },
                         sky: {
-                            300: 'rgb(var(--color-accent) / <alpha-value>)',
-                            400: 'rgb(var(--color-accent) / <alpha-value>)',
-                            500: 'rgb(var(--color-primary) / <alpha-value>)'
+                            300: 'rgb(var(--blue-rgb) / <alpha-value>)',
+                            400: 'rgb(var(--blue-rgb) / <alpha-value>)',
+                            500: 'rgb(var(--blue-rgb) / <alpha-value>)'
                         },
                         blue: {
-                            500: 'rgb(var(--color-primary) / <alpha-value>)',
-                            600: 'rgb(var(--color-primary-dark) / <alpha-value>)'
+                            500: 'rgb(var(--blue-rgb) / <alpha-value>)',
+                            600: 'rgb(var(--blue-rgb) / <alpha-value>)'
                         },
                         brand: {
-                            blue: 'rgb(var(--color-accent) / <alpha-value>)',
-                            glow: 'rgb(var(--color-primary) / <alpha-value>)',
-                            darkBlue: 'rgb(var(--color-primary-dark) / <alpha-value>)',
-                            dark: 'rgb(var(--color-background) / <alpha-value>)',
-                            card: 'rgb(var(--color-surface) / <alpha-value>)',
-                            border: 'rgb(var(--color-border) / <alpha-value>)'
+                            blue: 'rgb(var(--blue-rgb) / <alpha-value>)',
+                            darkBlue: 'rgb(var(--surface-2-rgb) / <alpha-value>)',
+                            dark: 'rgb(var(--bg-rgb) / <alpha-value>)',
+                            card: 'rgb(var(--surface-rgb) / <alpha-value>)',
+                            border: 'rgb(var(--border-rgb) / <alpha-value>)'
                         }
                     },
                     fontFamily: {
@@ -69,28 +85,23 @@
 
     <style>
         :root {
-            --color-background: 8 10 13;
-            --color-surface: 20 23 27;
-            --color-surface-raised: 30 35 41;
-            --color-border: 48 56 65;
-            --color-primary: 0 105 173;
-            --color-primary-dark: 0 77 128;
-            --color-accent: 18 168 255;
-            --color-secondary: 204 212 220;
-            --color-text: 247 249 251;
-            --color-ink: 8 10 13;
-            --color-white: var(--color-text);
-            --color-slate-50: 248 250 252;
-            --color-slate-100: 237 240 243;
-            --color-slate-200: 221 227 233;
-            --color-slate-300: var(--color-secondary);
-            --color-slate-400: 179 190 200;
-            --color-slate-500: 157 170 182;
-            --color-slate-600: 137 150 163;
-            --color-slate-700: 70 81 92;
-            --color-slate-800: 48 56 65;
-            --color-slate-900: 20 23 27;
-            --color-slate-950: 8 10 13;
+            color-scheme: dark;
+            --bg: #0d0e10;
+            --surface: #15171a;
+            --surface-2: #1b1e22;
+            --border: #2a2d33;
+            --text: #f2f3f5;
+            --muted: #9aa0a8;
+            --silver: #d7dbe1;
+            --blue: #2b8cff;
+            --bg-rgb: 13 14 16;
+            --surface-rgb: 21 23 26;
+            --surface-2-rgb: 27 30 34;
+            --border-rgb: 42 45 51;
+            --text-rgb: 242 243 245;
+            --muted-rgb: 154 160 168;
+            --silver-rgb: 215 219 225;
+            --blue-rgb: 43 140 255;
             --font-body: 'Inter', Arial, sans-serif;
             --font-heading: var(--font-body);
             --font-size-body: 1rem;
@@ -98,127 +109,240 @@
             --font-size-sm: 0.9375rem;
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+
         body {
-            background-color: rgb(var(--color-background));
-            color: rgb(var(--color-white));
+            background-color: var(--bg);
+            color: var(--text);
             font-family: var(--font-body);
             font-size: var(--font-size-body);
-            background-image:
-                radial-gradient(circle at 50% 0%, rgb(var(--color-primary) / 0.16) 0%, transparent 60%),
-                radial-gradient(circle at 100% 50%, rgb(var(--color-accent) / 0.07) 0%, transparent 40%);
         }
+        ::selection { background-color: var(--silver); color: var(--bg); }
+
         button, input, select, textarea {
             font-family: var(--font-body);
         }
-        .carbon-texture {
-            background-color: rgb(var(--color-surface));
-            background-image:
-                radial-gradient(rgb(var(--color-white) / 0.05) 1px, transparent 0),
-                radial-gradient(rgb(var(--color-white) / 0.05) 1px, rgb(var(--color-surface)) 1px);
-            background-size: 12px 12px;
-            background-position: 0 0, 6px 6px;
+
+        a, button, .package-card, .addon-option, details > summary {
+            transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, filter 200ms ease, transform 200ms ease;
+            transition-duration: 200ms !important;
         }
-        .glow-blue { box-shadow: 0 0 25px -5px rgb(var(--color-accent) / 0.35); }
-        .glow-blue-sm { box-shadow: 0 0 15px -3px rgb(var(--color-accent) / 0.25); }
-        .text-glow { text-shadow: 0 0 12px rgb(var(--color-accent) / 0.6); }
+
+        a:not(.button-primary):not(.button-secondary) { color: var(--muted); }
+        a:not(.button-primary):not(.button-secondary):hover { color: var(--blue); }
+
+        .button-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--silver);
+            border-radius: 10px;
+            background-color: var(--silver);
+            color: var(--bg);
+            font-weight: 700;
+            transition: filter 200ms ease, transform 200ms ease;
+        }
+        .button-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+        .button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background-color: transparent;
+            color: var(--text);
+        }
+        .button-secondary:hover { border-color: var(--silver); color: var(--text); }
+        .helper-note {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background-color: var(--surface);
+            padding: 12px;
+        }
+        .section-label {
+            color: var(--muted);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .package-card {
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            border-radius: 12px;
+        }
         .package-card.active {
-            border-color: rgb(var(--color-accent));
-            box-shadow: 0 0 15px -3px rgb(var(--color-accent) / 0.25);
+            border-color: var(--blue);
+            background-color: color-mix(in srgb, var(--blue) 7%, var(--surface));
         }
         .package-select {
-            background-color: rgb(var(--color-surface-raised));
-            border-color: rgb(var(--color-border));
-            color: rgb(var(--color-white));
+            border: 1px solid var(--border);
+            background-color: var(--surface-2);
+            color: var(--text);
         }
         .package-card.active .package-select {
-            background-color: rgb(var(--color-primary));
-            border-color: rgb(var(--color-primary));
-            color: rgb(var(--color-white));
+            border-color: var(--blue);
+            background-color: color-mix(in srgb, var(--blue) 14%, var(--surface));
+            color: var(--text);
         }
-        .package-select:hover { background-color: rgb(var(--color-primary-dark)); }
-        :where(a, button, input, select, textarea):focus-visible {
-            outline: 2px solid rgb(var(--color-accent));
+        .package-select:hover { border-color: var(--blue); }
+
+        .v-btn {
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            color: var(--muted);
+        }
+        .v-btn[aria-pressed="true"] {
+            border-color: var(--blue);
+            background-color: color-mix(in srgb, var(--blue) 9%, var(--surface));
+            color: var(--text);
+        }
+        .v-btn i { color: var(--muted); }
+        .v-btn[aria-pressed="true"] i { color: var(--blue); }
+        .v-btn:hover { border-color: var(--silver); background-color: var(--surface-2); }
+        .v-btn[aria-pressed="true"]:hover { background-color: color-mix(in srgb, var(--blue) 12%, var(--surface)); }
+
+        .addon-option {
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            border-radius: 10px;
+        }
+        .addon-option:hover { border-color: var(--silver); }
+        input, select, textarea { border-color: var(--border); color: var(--text); }
+        input:not([type="checkbox"]), select, textarea { background-color: var(--surface-2); }
+        input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+        input[type="checkbox"] { accent-color: var(--blue); }
+
+        #confirm-modal { background-color: rgb(var(--bg-rgb) / 0.84); }
+        .modal-panel {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background-color: var(--surface);
+        }
+
+        details > summary { cursor: pointer; }
+        details > summary::marker { color: var(--blue); }
+        details > summary:hover { color: var(--blue); }
+        .faq-list > details + details { border-top: 1px solid var(--border); }
+
+        .reveal-on-scroll.reveal-ready { transition: opacity 500ms ease, transform 500ms ease; }
+        .reveal-on-scroll.reveal-ready:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+        .reveal-on-scroll.reveal-ready.is-visible { opacity: 1; transform: translateY(0); }
+
+        :where(a, button, input, select, textarea, summary):focus-visible {
+            outline: 2px solid var(--blue) !important;
             outline-offset: 3px;
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgb(var(--color-background)); }
-        ::-webkit-scrollbar-thumb { background: rgb(var(--color-border)); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-accent)); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+            a, button, .package-card, .addon-option, details > summary, .button-primary, .button-secondary {
+                transition-duration: 0.01ms !important;
+            }
+            .reveal-on-scroll.reveal-ready { transition: none !important; }
+        }
     </style>
 </head>
-<body class="font-sans antialiased pb-12 selection:bg-brand-blue selection:text-black">
+<body class="font-sans antialiased">
 
     <!-- TOP NAVIGATION BAR -->
-    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <a href="#" aria-label="Higgins Auto Detailing home"><img src="logo-nav.png" alt="Higgins Auto Detailing" class="h-7 sm:h-8 w-auto"></a>
-            </div>
+    <nav class="sticky top-0 z-50 bg-brand-dark border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+            <a href="#" aria-label="Higgins Automotive Detailing home">
+                <img src="logo-nav.webp" alt="Higgins Automotive Detailing logo" width="800" height="128" class="w-28 sm:w-40 h-auto">
+            </a>
 
-            <div class="flex items-center space-x-3">
-                <a href="mailto:keeganhig@gmail.com" class="hidden sm:inline-flex items-center text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-brand-blue transition px-3 py-2">
-                    <i class="fa-solid fa-envelope mr-1 text-brand-blue"></i> Email Us
-                </a>
-                <a href="#estimator" class="hidden md:inline-flex items-center space-x-1 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-brand-blue transition px-3 py-2">
-                    <i class="fa-solid fa-calculator mr-1 text-brand-blue"></i> Estimator
-                </a>
-                <a href="#booking" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg shadow-lg shadow-sky-500/20 transition duration-200">
-                    Book Now
-                </a>
+            <div class="flex items-center gap-2 sm:gap-5">
+                <a href="#estimator" class="text-[0.68rem] sm:text-xs font-semibold uppercase tracking-wide px-1 py-2">Estimator</a>
+                <a href="#booking" class="button-primary text-[0.68rem] sm:text-xs uppercase tracking-wide px-2.5 sm:px-4 py-2">Book Now</a>
+                <a href="mailto:keeganhig@gmail.com" class="text-[0.68rem] sm:text-xs font-semibold uppercase tracking-wide px-1 py-2">Email</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="relative pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center overflow-hidden">
-        <img src="logo.png" alt="Higgins Auto Detailing" class="w-72 sm:w-[30rem] mx-auto mb-10">
-        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-brand-blue/30 text-brand-blue text-xs font-semibold mb-6 shadow-inner">
-            <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
-            <span>Local Mobile Detailing • We Come To You!</span>
+    <header class="reveal-on-scroll pt-12 sm:pt-16 pb-14 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center">
+        <img src="logo.webp" alt="Higgins Automotive Detailing logo" width="1200" height="670" fetchpriority="high" decoding="async" class="w-72 sm:w-[30rem] h-auto mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-semibold mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue" aria-hidden="true"></span>
+            <span>Local Mobile Detailing • We Come To You</span>
         </div>
 
         <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight uppercase leading-none mb-4">
             Pristine Finish.<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-brand-blue to-blue-500 text-glow">Precision Care.</span>
+            <span class="text-slate-300">Precision Care.</span>
         </h1>
 
         <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
-            Professional-grade mobile car detailing brought straight to your home or office. Owned &amp; operated by <span class="text-white font-semibold">Keegan Trey Higgins</span>.
+            Professional mobile interior detailing brought straight to your home or office. Owned &amp; operated by <span class="text-white font-semibold">Keegan Trey Higgins</span>.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-            <a href="#estimator" class="w-full sm:w-auto bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-sky-500/25 flex items-center justify-center space-x-2 text-sm uppercase tracking-wider transition transform hover:-translate-y-0.5">
-                <i class="fa-solid fa-calculator"></i>
+            <a href="#estimator" class="button-primary w-full sm:w-auto px-8 py-4 space-x-2 text-sm uppercase tracking-wider">
+                <i class="fa-solid fa-calculator text-brand-blue" aria-hidden="true"></i>
                 <span>Build &amp; Price Estimate</span>
             </a>
-            <a href="#results" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-6 py-4 rounded-xl flex items-center justify-center space-x-2 text-sm transition">
-                <i class="fa-solid fa-wand-magic-sparkles text-brand-blue"></i>
+            <a href="#results" class="button-secondary w-full sm:w-auto px-6 py-4 space-x-2 text-sm">
+                <i class="fa-solid fa-wand-magic-sparkles text-brand-blue" aria-hidden="true"></i>
                 <span>See Our Results</span>
             </a>
         </div>
 
-        <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mt-12 pt-8 border-t border-slate-800/80 text-center">
-            <div class="p-2 sm:p-4 bg-slate-900/40 rounded-lg border border-slate-800">
+        <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center">
+            <div class="p-2 sm:p-4 bg-slate-900 rounded-lg border border-slate-800">
                 <div class="font-display font-black text-lg sm:text-2xl text-white">100%</div>
-                <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Mobile Service</div>
+                <div class="text-[0.625rem] sm:text-xs text-slate-400 uppercase tracking-wide mt-0.5">Mobile Service</div>
             </div>
-            <div class="p-2 sm:p-4 bg-slate-900/40 rounded-lg border border-slate-800">
-                <div class="font-display font-black text-lg sm:text-2xl text-brand-blue">Pro-Grade</div>
-                <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Ceramic &amp; Steam</div>
+            <div class="p-2 sm:p-4 bg-slate-900 rounded-lg border border-slate-800">
+                <div class="font-display font-bold text-xs sm:text-lg text-white">Interior Specialists</div>
+                <div class="text-[0.625rem] sm:text-xs text-slate-400 uppercase tracking-wide mt-0.5">Deep-Clean Detailing</div>
             </div>
-            <div class="p-2 sm:p-4 bg-slate-900/40 rounded-lg border border-slate-800">
+            <div class="p-2 sm:p-4 bg-slate-900 rounded-lg border border-slate-800">
                 <div class="font-display font-black text-lg sm:text-2xl text-white">5 ★ Rated</div>
-                <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Local Satisfaction</div>
+                <div class="text-[0.625rem] sm:text-xs text-slate-400 uppercase tracking-wide mt-0.5">Local Satisfaction</div>
             </div>
         </div>
     </header>
 
-    <!-- INTERACTIVE PRICE ESTIMATOR -->
-    <section id="estimator" class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div class="bg-brand-card rounded-2xl border border-slate-800 p-6 sm:p-8 carbon-texture shadow-2xl relative">
+    <!-- HOW IT WORKS -->
+    <section class="reveal-on-scroll py-12 sm:py-14 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
-                <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Interior Detailing</span>
+                <span class="section-label">A Simple Process</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">How It Works</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                <article class="py-4 sm:px-5 border-b sm:border-b-0 lg:border-r border-slate-800">
+                    <span class="text-sm font-bold text-slate-300">01</span>
+                    <h3 class="font-semibold text-white mt-1">Build your estimate</h3>
+                    <p class="text-sm text-slate-400 mt-1">Pick your vehicle, package and add-ons.</p>
+                </article>
+                <article class="py-4 sm:px-5 border-b sm:border-b-0 lg:border-r border-slate-800">
+                    <span class="text-sm font-bold text-slate-300">02</span>
+                    <h3 class="font-semibold text-white mt-1">Send your request</h3>
+                    <p class="text-sm text-slate-400 mt-1">Tap submit and text Keegan the details.</p>
+                </article>
+                <article class="py-4 sm:px-5 border-b sm:border-b-0 lg:border-r border-slate-800">
+                    <span class="text-sm font-bold text-slate-300">03</span>
+                    <h3 class="font-semibold text-white mt-1">Keegan comes to you</h3>
+                    <p class="text-sm text-slate-400 mt-1">At your home or office, fully equipped.</p>
+                </article>
+                <article class="py-4 sm:px-5">
+                    <span class="text-sm font-bold text-slate-300">04</span>
+                    <h3 class="font-semibold text-white mt-1">Pay after the service</h3>
+                    <p class="text-sm text-slate-400 mt-1">Cash App, Venmo, PayPal or cash.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PRICE ESTIMATOR -->
+    <section id="estimator" class="reveal-on-scroll py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-20">
+        <div class="bg-brand-card rounded-xl border border-slate-800 p-6 sm:p-8 relative">
+            <div class="text-center mb-8">
+                <span class="section-label">Interior Detailing</span>
                 <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">Packages &amp; Pricing</h2>
                 <p class="text-slate-400 text-sm mt-1">Choose your vehicle, interior package, and any add-ons for an instant estimate.</p>
             </div>
@@ -226,19 +350,19 @@
             <div class="mb-8">
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">1. Select Vehicle Type</label>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="vehicle-type-selector">
-                    <button type="button" data-vtype="Sedan/Coupe" data-vehicle="sedan" aria-pressed="true" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                    <button type="button" data-vtype="Sedan/Coupe" data-vehicle="sedan" aria-pressed="true" class="v-btn rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center text-center">
                         <i class="fa-solid fa-car text-xl mb-2 text-brand-blue" aria-hidden="true"></i>
                         <span class="font-semibold text-sm">Sedan/Coupe</span>
                     </button>
-                    <button type="button" data-vtype="Truck" data-vehicle="truck" aria-pressed="false" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                    <button type="button" data-vtype="Truck" data-vehicle="truck" aria-pressed="false" class="v-btn rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center text-center">
                         <i class="fa-solid fa-truck-pickup text-xl mb-2 text-slate-400" aria-hidden="true"></i>
                         <span class="font-semibold text-sm">Truck</span>
                     </button>
-                    <button type="button" data-vtype="SUV" data-vehicle="suv" aria-pressed="false" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                    <button type="button" data-vtype="SUV" data-vehicle="suv" aria-pressed="false" class="v-btn rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center text-center">
                         <i class="fa-solid fa-car-side text-xl mb-2 text-slate-400" aria-hidden="true"></i>
                         <span class="font-semibold text-sm">SUV</span>
                     </button>
-                    <button type="button" data-vtype="3-Row / XL Vehicle" data-vehicle="xl" aria-pressed="false" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                    <button type="button" data-vtype="3-Row / XL Vehicle" data-vehicle="xl" aria-pressed="false" class="v-btn rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center text-center">
                         <i class="fa-solid fa-van-shuttle text-xl mb-2 text-slate-400" aria-hidden="true"></i>
                         <span class="font-semibold text-xs sm:text-sm">3-Row / XL Vehicle</span>
                     </button>
@@ -248,8 +372,8 @@
             <div class="mb-8">
                 <h3 class="block text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">2. Choose an Interior Package</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="package-selector">
-                    <article data-package-card="basic" class="package-card active bg-slate-900 border-2 border-brand-blue rounded-xl p-5 flex flex-col transition glow-blue-sm">
-                        <div class="text-xs font-bold text-brand-blue uppercase tracking-wider">Essential Care</div>
+                    <article data-package-card="basic" class="package-card active rounded-xl p-5 flex flex-col">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Essential Care</div>
                         <h4 class="font-display font-bold text-xl text-white mt-1">Basic Interior Package</h4>
                         <p class="mt-2 mb-4"><span class="font-display text-3xl font-bold text-white">$<span data-package-price="basic">115</span></span><span class="text-sm text-slate-400"> / vehicle</span></p>
                         <ul class="text-sm text-slate-300 space-y-2 mb-5">
@@ -262,8 +386,8 @@
                         <button type="button" data-package="basic" aria-pressed="true" class="package-select mt-auto rounded-lg border px-4 py-3 text-sm font-bold transition">Selected Package</button>
                     </article>
 
-                    <article data-package-card="premium" class="package-card bg-slate-900 border-2 border-slate-800 rounded-xl p-5 flex flex-col transition">
-                        <div class="text-xs font-bold text-brand-blue uppercase tracking-wider">Deep Refresh</div>
+                    <article data-package-card="premium" class="package-card rounded-xl p-5 flex flex-col">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Deep Refresh</div>
                         <h4 class="font-display font-bold text-xl text-white mt-1">Premium Interior Package</h4>
                         <p class="mt-2 mb-4"><span class="font-display text-3xl font-bold text-white">$<span data-package-price="premium">165</span></span><span class="text-sm text-slate-400"> / vehicle</span></p>
                         <p class="text-sm font-semibold text-slate-200 mb-2">Everything in Basic, plus:</p>
@@ -277,7 +401,7 @@
                         <button type="button" data-package="premium" aria-pressed="false" class="package-select mt-auto rounded-lg border px-4 py-3 text-sm font-bold transition">Select Package</button>
                     </article>
                 </div>
-                <p class="mt-4 rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-sm text-slate-300">These prices assume normal vehicle condition. Extremely dirty interiors, heavy pet hair and unusual cleanup needs cost extra.</p>
+                <p class="helper-note mt-4 text-sm text-slate-300">Prices assume normal condition. Heavy pet hair, excessive dirt, and unusual cleanup needs may cost extra.</p>
             </div>
 
             <div class="mb-8">
@@ -286,7 +410,7 @@
                     <div class="addon-option bg-slate-900 border border-slate-800 rounded-lg p-3 flex flex-col gap-3 transition">
                         <div class="flex items-center justify-between gap-3">
                             <label for="pet-hair-level" class="text-sm font-semibold text-white">Pet hair removal</label>
-                            <span id="pet-hair-price" class="text-sm font-bold text-brand-blue">$25</span>
+                            <span id="pet-hair-price" class="text-sm font-bold text-slate-300">$25</span>
                         </div>
                         <select id="pet-hair-level" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-white focus:border-brand-blue focus:outline-none">
                             <option value="light" data-price="25">Light — $25</option>
@@ -298,31 +422,31 @@
                             Add pet hair removal
                         </label>
                     </div>
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition">
-                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="40" data-addon-max="70" data-addon-name="Carpet / upholstery shampoo" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Carpet / upholstery shampoo</span></span><span class="text-sm font-bold text-brand-blue">$40–$70</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 rounded-lg p-3 flex items-center justify-between gap-3">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="40" data-addon-max="70" data-addon-name="Carpet / upholstery shampoo" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Carpet / upholstery shampoo</span></span><span class="text-sm font-bold text-slate-300">$40–$70</span>
                     </label>
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition">
-                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="25" data-addon-max="45" data-addon-name="Targeted stain treatment" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Targeted stain treatment</span></span><span class="text-sm font-bold text-brand-blue">$25–$45</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 rounded-lg p-3 flex items-center justify-between gap-3">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="25" data-addon-max="45" data-addon-name="Targeted stain treatment" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Targeted stain treatment</span></span><span class="text-sm font-bold text-slate-300">$25–$45</span>
                     </label>
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition">
-                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="25" data-addon-max="50" data-addon-name="Excessive dirt or grime" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Excessive dirt or grime</span></span><span class="text-sm font-bold text-brand-blue">$25–$50</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 rounded-lg p-3 flex items-center justify-between gap-3">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="25" data-addon-max="50" data-addon-name="Excessive dirt or grime" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Excessive dirt or grime</span></span><span class="text-sm font-bold text-slate-300">$25–$50</span>
                     </label>
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition sm:col-span-2">
-                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="15" data-addon-max="30" data-addon-name="Excessive trash removal" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Excessive trash removal</span></span><span class="text-sm font-bold text-brand-blue">$15–$30</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 rounded-lg p-3 flex items-center justify-between gap-3 sm:col-span-2">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="15" data-addon-max="30" data-addon-name="Excessive trash removal" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Excessive trash removal</span></span><span class="text-sm font-bold text-slate-300">$15–$30</span>
                     </label>
                 </div>
             </div>
 
-            <div class="bg-slate-950 border border-brand-blue/40 rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 glow-blue-sm">
+            <div class="helper-note flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
                     <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimated Total</span>
                     <div class="flex items-baseline flex-wrap gap-x-2">
-                        <span id="total-price" class="font-display text-3xl sm:text-4xl font-bold text-white text-glow">$115</span>
+                        <span id="total-price" class="font-display text-3xl sm:text-4xl font-bold text-white">$115</span>
                         <span id="selected-summary-text" class="text-sm text-brand-blue font-medium">Sedan/Coupe • Basic Interior Package</span>
                     </div>
-                    <p class="mt-1 text-xs text-slate-400">Add-on estimates start at the listed minimum; final price is confirmed after inspection.</p>
+                    <p class="mt-1 text-xs text-slate-400">Final add-on pricing is confirmed after inspection.</p>
                 </div>
-                <a href="#booking" id="lock-estimate-btn" class="w-full sm:w-auto text-center bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold px-6 py-3.5 rounded-lg text-sm transition shadow-lg">
+                <a href="#booking" id="lock-estimate-btn" class="button-primary w-full sm:w-auto px-6 py-3.5 text-sm">
                     Apply Estimate To Booking <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
                 </a>
             </div>
@@ -330,26 +454,118 @@
     </section>
 
     <!-- VIDEO SHOWCASE -->
-    <section id="results" class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <section id="results" class="reveal-on-scroll py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-20">
         <div class="text-center mb-8">
-            <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Watch Our Process</span>
+            <span class="section-label">Watch Our Process</span>
             <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">Detailing Showcase</h2>
-            <p class="text-slate-400 text-xs sm:text-sm mt-1">A video of our detailing work is coming soon.</p>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">Watch our latest detailing videos.</p>
         </div>
 
-        <div class="max-w-3xl mx-auto aspect-video flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-800 bg-slate-950/70 shadow-2xl">
-            <i class="fa-solid fa-circle-play text-4xl text-brand-blue" aria-hidden="true"></i>
-            <p class="text-sm font-semibold text-slate-300">Video coming soon</p>
+        <div id="recent-videos" class="grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
+
+        <details class="mt-5 rounded-xl border border-slate-800 bg-slate-950/70">
+            <summary class="cursor-pointer px-5 py-3 text-center text-sm font-semibold text-brand-blue hover:text-white transition">Show more</summary>
+            <div class="border-t border-slate-800 p-5">
+                <div id="older-videos" class="grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
+            </div>
+        </details>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section id="reviews" class="reveal-on-scroll py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-20">
+        <div class="text-center mb-8">
+            <span class="section-label">Kind Words From Local Clients</span>
+            <h2 class="font-display text-2xl sm:text-4xl font-bold text-white mt-1">What Clients Say</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <article class="bg-brand-card border border-slate-800 rounded-xl p-5 sm:p-6">
+                <div class="flex gap-1 text-brand-blue mb-4" role="img" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+                <blockquote class="text-slate-200 leading-relaxed">Exceeded Expectations, Hard Working, and left my car looking &amp; smelling brand new. 10/10 service would recommend, Definitely coming back!</blockquote>
+                <p class="mt-5 font-semibold text-white">Korissa <span class="text-slate-400 font-normal">• Dodge Avenger</span></p>
+                <p class="mt-2 flex items-center gap-1.5 text-sm text-slate-400">
+                    <svg class="h-4 w-4 text-brand-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                        <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    Howell, Livingston County, MI
+                </p>
+            </article>
+            <article class="bg-brand-card border border-slate-800 rounded-xl p-5 sm:p-6">
+                <div class="flex gap-1 text-brand-blue mb-4" role="img" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+                <blockquote class="text-slate-200 leading-relaxed">Had a crap ton of dog hair all over my Truck, When Keegan left it was super clean, and even smelt good, and hairless! He's a hard worker, and from what I can tell, he cares about every client &amp; every job. Will be a returning client and definitely recommend!</blockquote>
+                <p class="mt-5 font-semibold text-white">Kinsey <span class="text-slate-400 font-normal">• Ford F150</span></p>
+                <p class="mt-2 flex items-center gap-1.5 text-sm text-slate-400">
+                    <svg class="h-4 w-4 text-brand-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                        <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    Howell, Livingston County, MI
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="reveal-on-scroll py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="rounded-xl border border-slate-800 bg-brand-card p-5 text-center">
+            <h2 class="section-label">Service Area</h2>
+            <p class="text-slate-200 mt-2">Proudly serving all of Livingston County, Michigan. We come to your home or office.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="reveal-on-scroll py-12 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+        <div class="text-center mb-6">
+            <span class="section-label">Good To Know</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list rounded-xl border border-slate-800 bg-brand-card px-5">
+            <details class="py-4">
+                <summary class="font-semibold text-white">Do I need to provide power or water?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Keegan brings the equipment, supplies. Please provide access to water &amp; a power outlet, preferably an exterior one near where the vehicle will be parked.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">How long does a detail take?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Most interior details take about 2-4 hours depending on the package, vehicle size and condition.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">Do I need to be there?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Not necessarily. We just need access to the vehicle and the power outlet. Many clients stay home or work nearby.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">What if the weather is bad?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Interior details can usually go ahead in light rain or cold weather. In severe weather we'll contact you to reschedule.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">What is your cancellation policy?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Plans change. Please give at least 24 hours' notice to cancel or reschedule so we can offer the time slot to someone else. There's no fee.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">How do I pay?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Payment is due after the service is completed. We accept Cash App, Venmo, PayPal and cash.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">What areas do you serve?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">All of Livingston County, Michigan.</p>
+            </details>
+            <details class="py-4">
+                <summary class="font-semibold text-white">How are add-ons priced?</summary>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">Add-on estimates start at the listed minimum. The final price is confirmed after inspection.</p>
+            </details>
         </div>
     </section>
 
     <!-- BOOKING FORM -->
-    <section id="booking" class="py-12 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-        <div class="bg-brand-card rounded-2xl border border-slate-800 p-6 sm:p-8 shadow-2xl">
+    <section id="booking" class="reveal-on-scroll py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto scroll-mt-20">
+        <div class="bg-brand-card rounded-xl border border-slate-800 p-6 sm:p-8">
             <div class="text-center mb-6">
-                <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Reserve Your Slot</span>
+                <span class="section-label">Reserve Your Slot</span>
                 <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white mt-1">Request Service Appointment</h2>
-                <p class="text-slate-400 text-xs sm:text-sm">Fill this out and tap Submit. Your phone will open a text to Keegan with everything filled in. Just hit send!</p>
+                <p class="helper-note max-w-xl mx-auto text-slate-300 text-sm mt-3">Submit the form to open a ready-to-send text to Keegan.</p>
             </div>
 
             <form id="booking-form" class="space-y-4">
@@ -397,7 +613,7 @@
                         <option value="PayPal">PayPal</option>
                         <option value="Cash">Cash</option>
                     </select>
-                    <p class="mt-1 text-sm text-slate-400">Payment is due after the service is completed.</p>
+                    <p class="helper-note mt-2 text-sm text-slate-300">Payment is due after the service is completed.</p>
                 </div>
 
                 <div>
@@ -405,7 +621,7 @@
                     <textarea id="f-notes" rows="3" placeholder="Tell Keegan about specific areas needing attention..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-white focus:border-brand-blue focus:outline-none"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-gradient-to-r from-sky-500 via-brand-glow to-blue-600 hover:from-sky-500 hover:to-blue-600 text-white font-bold p-4 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-sky-500/20 transition">
+                <button type="submit" class="button-primary w-full p-4 text-sm uppercase tracking-widest">
                     Text My Quote Request To Keegan <i class="fa-solid fa-paper-plane ml-1"></i>
                 </button>
                 <p class="text-center text-xs text-slate-500">Questions? <a href="mailto:keeganhig@gmail.com" class="text-brand-blue hover:underline">Email us</a>. Booking requests will still be sent to Keegan by text.</p>
@@ -414,53 +630,63 @@
     </section>
 
     <!-- ABOUT KEEGAN -->
-    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div class="bg-slate-900/60 rounded-2xl border border-slate-800 p-6 sm:p-10 flex flex-col md:flex-row items-center gap-8">
-            <img src="logo.png" alt="" class="w-40 sm:w-48 h-auto shrink-0 rounded-2xl border border-slate-800">
+    <section class="reveal-on-scroll py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="bg-brand-card rounded-xl border border-slate-800 p-6 sm:p-10 flex flex-col md:flex-row items-center gap-8">
+            <!-- TODO: Add Keegan's portrait at assets/images/keegan.jpg, then remove hidden and aria-hidden to display it. -->
+            <div class="hidden" aria-hidden="true">
+                <img src="assets/images/keegan.jpg" alt="Keegan Trey Higgins, owner of Higgins Automotive Detailing" width="720" height="960" loading="lazy" class="w-40 sm:w-48 h-auto shrink-0 rounded-xl">
+            </div>
             <div>
-                <span class="text-brand-blue text-sm font-bold uppercase tracking-widest">Driven By Passion</span>
+                <span class="section-label">Driven By Passion</span>
                 <h3 class="font-display text-2xl font-bold text-white mt-0.5">Meet Keegan Trey Higgins</h3>
                 <p class="text-slate-300 text-sm leading-relaxed mt-2">
-                    "At 16, I built Higgins Auto Detailing around one main promise: delivering unmatched dealership-quality results right in my clients' driveways. I treat every car like it's my own personal show car—using only premium safe chemicals, fresh microfibers, and careful precision."
+                    "At 16, I built Higgins Automotive Detailing around one main promise: delivering unmatched dealership-quality results right in my clients' driveways. I treat every car like it's my own personal show car—using only premium safe chemicals, fresh microfibers, and careful precision."
                 </p>
                 <div class="mt-4 flex flex-wrap gap-4 text-sm font-semibold text-slate-400">
-                    <span><i class="fa-solid fa-shield-halved text-brand-blue mr-1"></i> Fully Equipped Mobile Setup</span>
-                    <span><i class="fa-solid fa-star text-brand-blue mr-1"></i> High Attention To Detail</span>
+                    <span><i class="fa-solid fa-shield-halved text-brand-blue mr-1" aria-hidden="true"></i> Fully Equipped Mobile Setup</span>
+                    <span><i class="fa-solid fa-star text-brand-blue mr-1" aria-hidden="true"></i> High Attention To Detail</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="mt-16 border-t border-slate-800/80 pt-8 text-center text-xs text-slate-500">
-        <img src="logo.png" alt="Higgins Auto Detailing" class="w-40 mx-auto mb-3 opacity-90">
-        <p class="mt-1">Mobile Car Detailing • Owned &amp; Operated by Keegan Trey Higgins</p>
-        <p class="mt-1"><a href="mailto:keeganhig@gmail.com" class="text-brand-blue hover:underline">keeganhig@gmail.com</a></p>
-        <p class="mt-4 text-xs text-slate-600">© 2026 Higgins Auto Detailing. All rights reserved.</p>
+    <footer class="reveal-on-scroll border-t border-slate-800 px-4 pt-10 pb-8 text-center text-sm text-slate-400">
+        <img src="logo.webp" alt="Higgins Automotive Detailing logo" width="1200" height="670" loading="lazy" decoding="async" class="w-40 h-auto mx-auto mb-4">
+        <p>Mobile Car Detailing • Owned &amp; Operated by Keegan Trey Higgins</p>
+        <p class="mt-2"><a href="mailto:keeganhig@gmail.com">keeganhig@gmail.com</a></p>
+        <p class="mt-2">
+            <a href="https://www.tiktok.com/@higgins_automotiv_detail" target="_blank" rel="noopener noreferrer" aria-label="Higgins Automotive Detailing on TikTok" class="inline-flex items-center gap-2">
+                <i class="fa-brands fa-tiktok text-brand-blue" aria-hidden="true"></i> TikTok
+            </a>
+        </p>
+        <!-- TODO: Add Instagram and Facebook URLs before enabling these social links.
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        -->
+        <p class="mt-4">Serving Livingston County, Michigan</p>
+        <p class="mt-4 text-xs">© 2026 Higgins Automotive Detailing. All rights reserved.</p>
     </footer>
 
     <!-- CONFIRMATION MODAL -->
-    <div id="confirm-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-slate-900 border border-brand-blue rounded-2xl p-6 sm:p-8 max-w-md w-full text-center glow-blue">
-            <div class="w-16 h-16 bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-blue text-2xl">
-                <i class="fa-solid fa-comment-sms"></i>
-            </div>
-            <h3 class="font-display text-2xl font-black text-white">Almost Done: Hit Send!</h3>
-            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-                Your texting app should have opened with your quote request addressed to Keegan. <strong class="text-white">Tap send</strong> and he'll text you back to confirm a time.
+    <div id="confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="confirm-title">
+        <div class="modal-panel p-6 sm:p-8 max-w-md w-full text-center">
+            <h3 id="confirm-title" class="font-display text-2xl font-bold text-white">Almost Done: Hit Send!</h3>
+            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                Your text app should open with your request. Review it and tap Send to confirm.
             </p>
-            <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                Didn't open? (Common on computers.) Copy your request and text it to <a href="sms:+15175510040" class="text-brand-blue font-bold">(517) 551-0040</a>.
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+                If it doesn't open, copy your request and text Keegan at <a href="sms:+15175510040" class="text-brand-blue font-semibold">(517) 551-0040</a>.
             </p>
             <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <button type="button" id="retry-sms-btn" class="w-full bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-slate-700">
+                <button type="button" id="retry-sms-btn" class="button-secondary w-full font-bold py-3 text-xs uppercase tracking-wider">
                     Open Text Again
                 </button>
-                <button type="button" id="copy-msg-btn" class="w-full bg-slate-800 border border-slate-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-slate-700">
+                <button type="button" id="copy-msg-btn" class="button-secondary w-full font-bold py-3 text-xs uppercase tracking-wider">
                     Copy Request
                 </button>
             </div>
-            <button type="button" id="close-modal-btn" class="mt-3 w-full bg-brand-blue text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+            <button type="button" id="close-modal-btn" class="button-primary mt-3 w-full py-3 text-xs uppercase tracking-wider">
                 I Sent It, Thanks!
             </button>
         </div>
@@ -478,6 +704,10 @@
             basic: 'Basic Interior Package',
             premium: 'Premium Interior Package'
         };
+        // Add each new MP4 upload and timestamp here; the four newest appear above.
+        const galleryVideos = [
+            { src: 'detailing-showcase-1.mp4', addedAt: '2026-11-03T20:29:48' }
+        ];
         let vehicleKey = 'sedan';
         let vehicleTypeName = 'Sedan/Coupe';
         let selectedPackage = 'basic';
@@ -491,6 +721,38 @@
         const petHairLevelEl = document.getElementById('pet-hair-level');
         const petHairPriceEl = document.getElementById('pet-hair-price');
         const petHairCheckbox = document.querySelector('.addon-checkbox[data-addon-name="Pet hair removal"]');
+
+        function renderGalleryVideos() {
+            const recentVideos = document.getElementById('recent-videos');
+            const olderVideos = document.getElementById('older-videos');
+            const sortedVideos = [...galleryVideos].sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt));
+
+            recentVideos.replaceChildren();
+            olderVideos.replaceChildren();
+            sortedVideos.forEach((video, index) => {
+                const player = document.createElement('video');
+                player.className = 'w-full rounded-xl border border-slate-800 bg-slate-950';
+                player.style.aspectRatio = '9 / 16';
+                player.style.objectFit = 'cover';
+                player.controls = true;
+                player.playsInline = true;
+                player.preload = index < 4 ? 'metadata' : 'none';
+                player.setAttribute('aria-label', 'Higgins Automotive Detailing showcase video');
+
+                const source = document.createElement('source');
+                source.src = video.src;
+                source.type = 'video/mp4';
+                player.append(source);
+                (index < 4 ? recentVideos : olderVideos).append(player);
+            });
+
+            if (olderVideos.childElementCount === 0) {
+                const message = document.createElement('p');
+                message.className = 'col-span-full text-center text-sm text-slate-400';
+                message.textContent = 'More videos coming soon.';
+                olderVideos.append(message);
+            }
+        }
 
         function formatEstimate() {
             const basePrice = packagePrices[selectedPackage][vehicleKey];
@@ -542,19 +804,7 @@
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.v-btn').forEach(vehicleButton => {
                     const isSelected = vehicleButton === btn;
-                    const icon = vehicleButton.querySelector('i');
                     vehicleButton.setAttribute('aria-pressed', String(isSelected));
-                    vehicleButton.classList.toggle('bg-slate-800', isSelected);
-                    vehicleButton.classList.toggle('hover:bg-slate-700', isSelected);
-                    vehicleButton.classList.toggle('border-brand-blue', isSelected);
-                    vehicleButton.classList.toggle('text-white', isSelected);
-                    vehicleButton.classList.toggle('glow-blue-sm', isSelected);
-                    vehicleButton.classList.toggle('bg-slate-900', !isSelected);
-                    vehicleButton.classList.toggle('hover:bg-slate-800', !isSelected);
-                    vehicleButton.classList.toggle('border-slate-800', !isSelected);
-                    vehicleButton.classList.toggle('text-slate-300', !isSelected);
-                    icon.classList.toggle('text-brand-blue', isSelected);
-                    icon.classList.toggle('text-slate-400', !isSelected);
                 });
                 vehicleKey = btn.dataset.vehicle;
                 vehicleTypeName = btn.dataset.vtype;
@@ -609,7 +859,7 @@
 
         function buildMessage() {
             const lines = [
-                'Higgins Auto Detailing Quote Request',
+                'Higgins Automotive Detailing Quote Request',
                 `Name: ${val('f-name')}`,
                 `Phone: ${val('f-phone')}`,
                 `Vehicle: ${val('f-vehicle')} (${vehicleTypeName})`,
@@ -635,6 +885,7 @@
             lastMessage = buildMessage();
             confirmModal.classList.remove('hidden');
             confirmModal.classList.add('flex');
+            confirmModal.setAttribute('aria-hidden', 'false');
             openSms(lastMessage);
         });
 
@@ -654,9 +905,27 @@
         document.getElementById('close-modal-btn').addEventListener('click', () => {
             confirmModal.classList.add('hidden');
             confirmModal.classList.remove('flex');
+            confirmModal.setAttribute('aria-hidden', 'true');
             bookingForm.reset();
         });
 
+        const revealSections = document.querySelectorAll('.reveal-on-scroll');
+        if ('IntersectionObserver' in window) {
+            revealSections.forEach(section => section.classList.add('reveal-ready'));
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealSections.forEach(section => revealObserver.observe(section));
+        } else {
+            revealSections.forEach(section => section.classList.add('is-visible'));
+        }
+
+        renderGalleryVideos();
         document.querySelector('.v-btn[aria-pressed="true"]').click();
         updatePetHairPrice();
         updateCalculator();

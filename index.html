@@ -14,25 +14,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        black: 'rgb(var(--color-ink) / <alpha-value>)',
+                        white: 'rgb(var(--color-white) / <alpha-value>)',
+                        slate: {
+                            50: 'rgb(var(--color-slate-50) / <alpha-value>)',
+                            100: 'rgb(var(--color-slate-100) / <alpha-value>)',
+                            200: 'rgb(var(--color-slate-200) / <alpha-value>)',
+                            300: 'rgb(var(--color-slate-300) / <alpha-value>)',
+                            400: 'rgb(var(--color-slate-400) / <alpha-value>)',
+                            500: 'rgb(var(--color-slate-500) / <alpha-value>)',
+                            600: 'rgb(var(--color-slate-600) / <alpha-value>)',
+                            700: 'rgb(var(--color-slate-700) / <alpha-value>)',
+                            800: 'rgb(var(--color-slate-800) / <alpha-value>)',
+                            900: 'rgb(var(--color-slate-900) / <alpha-value>)',
+                            950: 'rgb(var(--color-slate-950) / <alpha-value>)'
+                        },
+                        sky: {
+                            300: 'rgb(var(--color-accent) / <alpha-value>)',
+                            400: 'rgb(var(--color-accent) / <alpha-value>)',
+                            500: 'rgb(var(--color-primary) / <alpha-value>)'
+                        },
+                        blue: {
+                            500: 'rgb(var(--color-primary) / <alpha-value>)',
+                            600: 'rgb(var(--color-primary-dark) / <alpha-value>)'
+                        },
                         brand: {
-                            blue: '#38bdf8',
-                            glow: '#0284c7',
-                            darkBlue: '#0c4a6e',
-                            dark: '#0a0f1d',
-                            card: '#111827',
-                            border: '#1e293b'
+                            blue: 'rgb(var(--color-accent) / <alpha-value>)',
+                            glow: 'rgb(var(--color-primary) / <alpha-value>)',
+                            darkBlue: 'rgb(var(--color-primary-dark) / <alpha-value>)',
+                            dark: 'rgb(var(--color-background) / <alpha-value>)',
+                            card: 'rgb(var(--color-surface) / <alpha-value>)',
+                            border: 'rgb(var(--color-border) / <alpha-value>)'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
+                        sans: ['var(--font-body)'],
+                        display: ['var(--font-heading)'],
+                    },
+                    fontSize: {
+                        xs: ['var(--font-size-xs)', { lineHeight: '1.4' }],
+                        sm: ['var(--font-size-sm)', { lineHeight: '1.5' }]
                     }
                 }
             }
@@ -40,57 +68,83 @@
     </script>
 
     <style>
+        :root {
+            --color-background: 8 10 13;
+            --color-surface: 20 23 27;
+            --color-surface-raised: 30 35 41;
+            --color-border: 48 56 65;
+            --color-primary: 0 105 173;
+            --color-primary-dark: 0 77 128;
+            --color-accent: 18 168 255;
+            --color-secondary: 204 212 220;
+            --color-text: 247 249 251;
+            --color-ink: 8 10 13;
+            --color-white: var(--color-text);
+            --color-slate-50: 248 250 252;
+            --color-slate-100: 237 240 243;
+            --color-slate-200: 221 227 233;
+            --color-slate-300: var(--color-secondary);
+            --color-slate-400: 179 190 200;
+            --color-slate-500: 157 170 182;
+            --color-slate-600: 137 150 163;
+            --color-slate-700: 70 81 92;
+            --color-slate-800: 48 56 65;
+            --color-slate-900: 20 23 27;
+            --color-slate-950: 8 10 13;
+            --font-body: 'Inter', Arial, sans-serif;
+            --font-heading: var(--font-body);
+            --font-size-body: 1rem;
+            --font-size-xs: 0.8125rem;
+            --font-size-sm: 0.9375rem;
+        }
+
         body {
-            background-color: #060913;
-            color: #f1f5f9;
+            background-color: rgb(var(--color-background));
+            color: rgb(var(--color-white));
+            font-family: var(--font-body);
+            font-size: var(--font-size-body);
             background-image:
-                radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 100% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+                radial-gradient(circle at 50% 0%, rgb(var(--color-primary) / 0.16) 0%, transparent 60%),
+                radial-gradient(circle at 100% 50%, rgb(var(--color-accent) / 0.07) 0%, transparent 40%);
+        }
+        button, input, select, textarea {
+            font-family: var(--font-body);
         }
         .carbon-texture {
-            background-color: #0d1322;
+            background-color: rgb(var(--color-surface));
             background-image:
-                radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0),
-                radial-gradient(rgba(255, 255, 255, 0.05) 1px, #0d1322 1px);
+                radial-gradient(rgb(var(--color-white) / 0.05) 1px, transparent 0),
+                radial-gradient(rgb(var(--color-white) / 0.05) 1px, rgb(var(--color-surface)) 1px);
             background-size: 12px 12px;
             background-position: 0 0, 6px 6px;
         }
-        .glow-blue { box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.35); }
-        .glow-blue-sm { box-shadow: 0 0 15px -3px rgba(56, 189, 248, 0.25); }
-        .text-glow { text-shadow: 0 0 12px rgba(56, 189, 248, 0.6); }
+        .glow-blue { box-shadow: 0 0 25px -5px rgb(var(--color-accent) / 0.35); }
+        .glow-blue-sm { box-shadow: 0 0 15px -3px rgb(var(--color-accent) / 0.25); }
+        .text-glow { text-shadow: 0 0 12px rgb(var(--color-accent) / 0.6); }
+        .package-card.active {
+            border-color: rgb(var(--color-accent));
+            box-shadow: 0 0 15px -3px rgb(var(--color-accent) / 0.25);
+        }
+        .package-select {
+            background-color: rgb(var(--color-surface-raised));
+            border-color: rgb(var(--color-border));
+            color: rgb(var(--color-white));
+        }
+        .package-card.active .package-select {
+            background-color: rgb(var(--color-primary));
+            border-color: rgb(var(--color-primary));
+            color: rgb(var(--color-white));
+        }
+        .package-select:hover { background-color: rgb(var(--color-primary-dark)); }
+        :where(a, button, input, select, textarea):focus-visible {
+            outline: 2px solid rgb(var(--color-accent));
+            outline-offset: 3px;
+        }
 
-        .ba-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            user-select: none;
-            touch-action: pan-y;
-        }
-        .ba-after {
-            position: absolute;
-            top: 0; bottom: 0; left: 0;
-            width: 50%;
-            overflow: hidden;
-            border-right: 3px solid #38bdf8;
-            box-shadow: 3px 0 10px rgba(56, 189, 248, 0.5);
-        }
-        .ba-slider-handle {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            background: #38bdf8;
-            color: #0a0f1d;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
-            cursor: ew-resize;
-            z-index: 20;
-        }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #060913; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+        ::-webkit-scrollbar-track { background: rgb(var(--color-background)); }
+        ::-webkit-scrollbar-thumb { background: rgb(var(--color-border)); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-accent)); }
     </style>
 </head>
 <body class="font-sans antialiased pb-12 selection:bg-brand-blue selection:text-black">
@@ -103,8 +157,8 @@
             </div>
 
             <div class="flex items-center space-x-3">
-                <a href="sms:+15175510040" class="hidden sm:inline-flex items-center text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-brand-blue transition px-3 py-2">
-                    <i class="fa-solid fa-comment-sms mr-1 text-brand-blue"></i> (517) 551-0040
+                <a href="mailto:keeganhig@gmail.com" class="hidden sm:inline-flex items-center text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-brand-blue transition px-3 py-2">
+                    <i class="fa-solid fa-envelope mr-1 text-brand-blue"></i> Email Us
                 </a>
                 <a href="#estimator" class="hidden md:inline-flex items-center space-x-1 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-brand-blue transition px-3 py-2">
                     <i class="fa-solid fa-calculator mr-1 text-brand-blue"></i> Estimator
@@ -147,15 +201,15 @@
         <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mt-12 pt-8 border-t border-slate-800/80 text-center">
             <div class="p-2 sm:p-4 bg-slate-900/40 rounded-lg border border-slate-800">
                 <div class="font-display font-black text-lg sm:text-2xl text-white">100%</div>
-                <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">Mobile Service</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Mobile Service</div>
             </div>
             <div class="p-2 sm:p-4 bg-slate-900/40 rounded-lg border border-slate-800">
                 <div class="font-display font-black text-lg sm:text-2xl text-brand-blue">Pro-Grade</div>
-                <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">Ceramic &amp; Steam</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Ceramic &amp; Steam</div>
             </div>
             <div class="p-2 sm:p-4 bg-slate-900/40 rounded-lg border border-slate-800">
                 <div class="font-display font-black text-lg sm:text-2xl text-white">5 ★ Rated</div>
-                <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-0.5">Local Satisfaction</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Local Satisfaction</div>
             </div>
         </div>
     </header>
@@ -164,212 +218,128 @@
     <section id="estimator" class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div class="bg-brand-card rounded-2xl border border-slate-800 p-6 sm:p-8 carbon-texture shadow-2xl relative">
             <div class="text-center mb-8">
-                <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Instant Calculator</span>
-                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">Interactive Price Builder</h2>
-                <p class="text-slate-400 text-xs sm:text-sm mt-1">Select your vehicle type, package, and custom add-ons below.</p>
+                <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Interior Detailing</span>
+                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">Packages &amp; Pricing</h2>
+                <p class="text-slate-400 text-sm mt-1">Choose your vehicle, interior package, and any add-ons for an instant estimate.</p>
             </div>
 
-            <!-- STEP 1: VEHICLE TYPE -->
             <div class="mb-8">
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">1. Select Vehicle Size</label>
-                <div class="grid grid-cols-3 gap-3" id="vehicle-type-selector">
-                    <button type="button" data-multiplier="1" data-vtype="Sedan / Coupe" class="v-btn active bg-slate-800 hover:bg-slate-700 border-2 border-brand-blue text-white rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center glow-blue-sm">
-                        <i class="fa-solid fa-car text-xl sm:text-2xl mb-1 text-brand-blue"></i>
-                        <span class="font-bold text-xs sm:text-sm">Sedan / Coupe</span>
-                        <span class="text-[10px] text-slate-400">Standard Pricing</span>
+                <label class="block text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">1. Select Vehicle Type</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="vehicle-type-selector">
+                    <button type="button" data-vtype="Sedan/Coupe" data-vehicle="sedan" aria-pressed="true" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                        <i class="fa-solid fa-car text-xl mb-2 text-brand-blue" aria-hidden="true"></i>
+                        <span class="font-semibold text-sm">Sedan/Coupe</span>
                     </button>
-                    <button type="button" data-multiplier="1.25" data-vtype="SUV / Crossover" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
-                        <i class="fa-solid fa-car-side text-xl sm:text-2xl mb-1 text-slate-400"></i>
-                        <span class="font-bold text-xs sm:text-sm">Mid SUV / Crossover</span>
-                        <span class="text-[10px] text-slate-400">+25%</span>
+                    <button type="button" data-vtype="Truck" data-vehicle="truck" aria-pressed="false" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                        <i class="fa-solid fa-truck-pickup text-xl mb-2 text-slate-400" aria-hidden="true"></i>
+                        <span class="font-semibold text-sm">Truck</span>
                     </button>
-                    <button type="button" data-multiplier="1.5" data-vtype="Truck / Large SUV" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
-                        <i class="fa-solid fa-truck-pickup text-xl sm:text-2xl mb-1 text-slate-400"></i>
-                        <span class="font-bold text-xs sm:text-sm">Truck / Large SUV</span>
-                        <span class="text-[10px] text-slate-400">+50%</span>
+                    <button type="button" data-vtype="SUV" data-vehicle="suv" aria-pressed="false" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                        <i class="fa-solid fa-car-side text-xl mb-2 text-slate-400" aria-hidden="true"></i>
+                        <span class="font-semibold text-sm">SUV</span>
+                    </button>
+                    <button type="button" data-vtype="3-Row / XL Vehicle" data-vehicle="xl" aria-pressed="false" class="v-btn bg-slate-900 hover:bg-slate-800 border-2 border-slate-800 text-slate-300 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center transition text-center">
+                        <i class="fa-solid fa-van-shuttle text-xl mb-2 text-slate-400" aria-hidden="true"></i>
+                        <span class="font-semibold text-xs sm:text-sm">3-Row / XL Vehicle</span>
                     </button>
                 </div>
             </div>
 
-            <!-- STEP 2: PACKAGE -->
             <div class="mb-8">
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">2. Choose Detail Tier</label>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <h3 class="block text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">2. Choose an Interior Package</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="package-selector">
+                    <article data-package-card="basic" class="package-card active bg-slate-900 border-2 border-brand-blue rounded-xl p-5 flex flex-col transition glow-blue-sm">
+                        <div class="text-xs font-bold text-brand-blue uppercase tracking-wider">Essential Care</div>
+                        <h4 class="font-display font-bold text-xl text-white mt-1">Basic Interior Package</h4>
+                        <p class="mt-2 mb-4"><span class="font-display text-3xl font-bold text-white">$<span data-package-price="basic">115</span></span><span class="text-sm text-slate-400"> / vehicle</span></p>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-5">
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Thorough vacuum of seats, carpets, mats and trunk</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Wipe-down of dashboard, console, doors and interior surfaces</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Cup holders, vents and accessible crevices</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Interior windows and mirrors</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Door jambs and general interior cleanup</li>
+                        </ul>
+                        <button type="button" data-package="basic" aria-pressed="true" class="package-select mt-auto rounded-lg border px-4 py-3 text-sm font-bold transition">Selected Package</button>
+                    </article>
 
-                    <div data-price="75" data-tier="Express Maintenance" class="tier-card cursor-pointer bg-slate-900/90 border-2 border-slate-800 hover:border-slate-700 rounded-xl p-5 flex flex-col justify-between transition relative">
-                        <div>
-                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tier 1</div>
-                            <h3 class="font-display font-extrabold text-lg text-white mt-0.5">Express Maintenance</h3>
-                            <div class="mt-2 mb-4">
-                                <span class="font-display text-2xl font-black text-white">$<span class="tier-display-price">75</span></span>
-                                <span class="text-xs text-slate-400">/ ~1.5 hrs</span>
-                            </div>
-                            <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> 100% Hand Wash &amp; Chamois Dry</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Wheel &amp; Tire Scrub + Satin Shine</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Full Interior &amp; Trunk Vacuum</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Dash &amp; Console Dust Wipe</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Interior &amp; Exterior Windows</li>
-                            </ul>
-                        </div>
-                        <div class="pt-3 border-t border-slate-800 text-center">
-                            <span class="tier-select-badge text-xs font-bold text-slate-400">Select Tier</span>
-                        </div>
-                    </div>
-
-                    <div data-price="160" data-tier="Precision Deep Clean" class="tier-card active cursor-pointer bg-slate-900 border-2 border-brand-blue rounded-xl p-5 flex flex-col justify-between transition relative glow-blue-sm">
-                        <div class="absolute -top-3 right-4 bg-gradient-to-r from-sky-400 to-blue-600 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-0.5 rounded-full shadow">
-                            Best Seller
-                        </div>
-                        <div>
-                            <div class="text-xs font-bold text-brand-blue uppercase tracking-wider">Tier 2</div>
-                            <h3 class="font-display font-extrabold text-lg text-white mt-0.5">Precision Deep Clean</h3>
-                            <div class="mt-2 mb-4">
-                                <span class="font-display text-2xl font-black text-brand-blue">$<span class="tier-display-price">160</span></span>
-                                <span class="text-xs text-slate-400">/ ~3.5 hrs</span>
-                            </div>
-                            <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> <strong>Everything in Tier 1 PLUS:</strong></li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> 3-Month Spray Ceramic Sealant</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Deep Carpet &amp; Mat Scrub</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Leather Cleanse &amp; Condition</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Air Vent Blowout &amp; Sanitize</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Door Jamb Detail</li>
-                            </ul>
-                        </div>
-                        <div class="pt-3 border-t border-slate-800 text-center">
-                            <span class="tier-select-badge text-xs font-bold text-brand-blue">Selected</span>
-                        </div>
-                    </div>
-
-                    <div data-price="260" data-tier="Showroom Restorative" class="tier-card cursor-pointer bg-slate-900/90 border-2 border-slate-800 hover:border-slate-700 rounded-xl p-5 flex flex-col justify-between transition relative">
-                        <div>
-                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tier 3</div>
-                            <h3 class="font-display font-extrabold text-lg text-white mt-0.5">Showroom Restorative</h3>
-                            <div class="mt-2 mb-4">
-                                <span class="font-display text-2xl font-black text-white">$<span class="tier-display-price">260</span></span>
-                                <span class="text-xs text-slate-400">/ ~5+ hrs</span>
-                            </div>
-                            <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> <strong>Everything in Tier 2 PLUS:</strong></li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Clay Bar Paint Decontamination</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Single-Stage Machine Polish</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> 1-Year Ceramic Spray Guard</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Full Upholstery Stain Extraction</li>
-                            </ul>
-                        </div>
-                        <div class="pt-3 border-t border-slate-800 text-center">
-                            <span class="tier-select-badge text-xs font-bold text-slate-400">Select Tier</span>
-                        </div>
-                    </div>
-
+                    <article data-package-card="premium" class="package-card bg-slate-900 border-2 border-slate-800 rounded-xl p-5 flex flex-col transition">
+                        <div class="text-xs font-bold text-brand-blue uppercase tracking-wider">Deep Refresh</div>
+                        <h4 class="font-display font-bold text-xl text-white mt-1">Premium Interior Package</h4>
+                        <p class="mt-2 mb-4"><span class="font-display text-3xl font-bold text-white">$<span data-package-price="premium">165</span></span><span class="text-sm text-slate-400"> / vehicle</span></p>
+                        <p class="text-sm font-semibold text-slate-200 mb-2">Everything in Basic, plus:</p>
+                        <ul class="text-sm text-slate-300 space-y-2 mb-5">
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Deeper cleaning of crevices and hard-to-reach areas</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Carpet and upholstery shampooing or extraction as appropriate</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Targeted stain treatment</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>More intensive cleaning of seats and mats</li>
+                            <li><i class="fa-solid fa-check text-brand-blue mr-2" aria-hidden="true"></i>Appropriate interior surface protection, where suitable</li>
+                        </ul>
+                        <button type="button" data-package="premium" aria-pressed="false" class="package-select mt-auto rounded-lg border px-4 py-3 text-sm font-bold transition">Select Package</button>
+                    </article>
                 </div>
+                <p class="mt-4 rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-sm text-slate-300">These prices assume normal vehicle condition. Extremely dirty interiors, heavy pet hair and unusual cleanup needs cost extra.</p>
             </div>
 
-            <!-- STEP 3: ADD-ONS -->
             <div class="mb-8">
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">3. Optional Service Add-Ons</label>
+                <h3 class="block text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">3. Optional Add-Ons</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between transition">
-                        <div class="flex items-center space-x-3">
-                            <input type="checkbox" data-addon-price="30" data-addon-name="Pet Hair Removal" class="addon-checkbox w-4 h-4 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950">
-                            <div>
-                                <span class="text-xs font-bold text-white block">Pet Hair Removal</span>
-                                <span class="text-[10px] text-slate-400">Specialty rubber brush extraction</span>
-                            </div>
+                    <div class="addon-option bg-slate-900 border border-slate-800 rounded-lg p-3 flex flex-col gap-3 transition">
+                        <div class="flex items-center justify-between gap-3">
+                            <label for="pet-hair-level" class="text-sm font-semibold text-white">Pet hair removal</label>
+                            <span id="pet-hair-price" class="text-sm font-bold text-brand-blue">$25</span>
                         </div>
-                        <span class="text-xs font-bold text-brand-blue">+$30</span>
+                        <select id="pet-hair-level" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-white focus:border-brand-blue focus:outline-none">
+                            <option value="light" data-price="25">Light — $25</option>
+                            <option value="moderate" data-price="40">Moderate — $40</option>
+                            <option value="heavy" data-price="60">Heavy — $60+</option>
+                        </select>
+                        <label class="flex items-center gap-3 text-sm text-slate-300">
+                            <input type="checkbox" data-addon-name="Pet hair removal" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950">
+                            Add pet hair removal
+                        </label>
+                    </div>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="40" data-addon-max="70" data-addon-name="Carpet / upholstery shampoo" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Carpet / upholstery shampoo</span></span><span class="text-sm font-bold text-brand-blue">$40–$70</span>
                     </label>
-
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between transition">
-                        <div class="flex items-center space-x-3">
-                            <input type="checkbox" data-addon-price="45" data-addon-name="Headlight Restoration" class="addon-checkbox w-4 h-4 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950">
-                            <div>
-                                <span class="text-xs font-bold text-white block">Headlight Restoration</span>
-                                <span class="text-[10px] text-slate-400">Oxidation wet sand &amp; clear seal</span>
-                            </div>
-                        </div>
-                        <span class="text-xs font-bold text-brand-blue">+$45</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="25" data-addon-max="45" data-addon-name="Targeted stain treatment" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Targeted stain treatment</span></span><span class="text-sm font-bold text-brand-blue">$25–$45</span>
                     </label>
-
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between transition">
-                        <div class="flex items-center space-x-3">
-                            <input type="checkbox" data-addon-price="50" data-addon-name="Engine Bay Detail" class="addon-checkbox w-4 h-4 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950">
-                            <div>
-                                <span class="text-xs font-bold text-white block">Engine Bay Steam &amp; Dress</span>
-                                <span class="text-[10px] text-slate-400">Safe degrease &amp; plastic conditioning</span>
-                            </div>
-                        </div>
-                        <span class="text-xs font-bold text-brand-blue">+$50</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="25" data-addon-max="50" data-addon-name="Excessive dirt or grime" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Excessive dirt or grime</span></span><span class="text-sm font-bold text-brand-blue">$25–$50</span>
                     </label>
-
-                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between transition">
-                        <div class="flex items-center space-x-3">
-                            <input type="checkbox" data-addon-price="35" data-addon-name="Odor Neutralizer Treatment" class="addon-checkbox w-4 h-4 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950">
-                            <div>
-                                <span class="text-xs font-bold text-white block">Odor Neutralizer Mist</span>
-                                <span class="text-[10px] text-slate-400">Deep AC vent &amp; cabin treatment</span>
-                            </div>
-                        </div>
-                        <span class="text-xs font-bold text-brand-blue">+$35</span>
+                    <label class="addon-option cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg p-3 flex items-center justify-between gap-3 transition sm:col-span-2">
+                        <span class="flex items-center gap-3"><input type="checkbox" data-addon-min="15" data-addon-max="30" data-addon-name="Excessive trash removal" class="addon-checkbox h-4 w-4 shrink-0 rounded border-slate-700 text-brand-blue focus:ring-brand-blue bg-slate-950"><span class="text-sm font-semibold text-white">Excessive trash removal</span></span><span class="text-sm font-bold text-brand-blue">$15–$30</span>
                     </label>
-
                 </div>
             </div>
 
-            <!-- LIVE ESTIMATE -->
             <div class="bg-slate-950 border border-brand-blue/40 rounded-xl p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 glow-blue-sm">
                 <div>
-                    <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Total Estimated Investment</span>
+                    <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimated Total</span>
                     <div class="flex items-baseline flex-wrap gap-x-2">
-                        <span id="total-price" class="font-display text-3xl sm:text-4xl font-black text-white text-glow">$160</span>
-                        <span id="selected-summary-text" class="text-xs text-brand-blue font-medium">Sedan / Coupe • Precision Deep Clean</span>
+                        <span id="total-price" class="font-display text-3xl sm:text-4xl font-bold text-white text-glow">$115</span>
+                        <span id="selected-summary-text" class="text-sm text-brand-blue font-medium">Sedan/Coupe • Basic Interior Package</span>
                     </div>
+                    <p class="mt-1 text-xs text-slate-400">Add-on estimates start at the listed minimum; final price is confirmed after inspection.</p>
                 </div>
-                <a href="#booking" id="lock-estimate-btn" class="w-full sm:w-auto text-center bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-black px-6 py-3.5 rounded-lg text-xs uppercase tracking-wider transition shadow-lg">
-                    Apply Estimate To Booking <i class="fa-solid fa-arrow-right ml-1"></i>
+                <a href="#booking" id="lock-estimate-btn" class="w-full sm:w-auto text-center bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold px-6 py-3.5 rounded-lg text-sm transition shadow-lg">
+                    Apply Estimate To Booking <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- BEFORE & AFTER -->
+    <!-- VIDEO SHOWCASE -->
     <section id="results" class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div class="text-center mb-8">
-            <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Real Results</span>
-            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">Mirror-Finish Transformations</h2>
-            <p class="text-slate-400 text-xs sm:text-sm mt-1">Drag the slider to see the difference our precision paint &amp; interior restoration makes.</p>
+            <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Watch Our Process</span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">Detailing Showcase</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">A video of our detailing work is coming soon.</p>
         </div>
 
-        <div class="ba-container max-w-3xl mx-auto aspect-video bg-slate-900 border border-slate-800 shadow-2xl">
-            <div class="w-full h-full bg-cover bg-center flex items-end justify-end p-4" style="background-image: url('https://images.unsplash.com/photo-1507136566006-cfc505b114f6?auto=format&fit=crop&w=1200&q=80');">
-                <span class="bg-slate-950/80 backdrop-blur-md text-slate-300 border border-slate-700 text-[10px] font-bold uppercase px-3 py-1 rounded">BEFORE: DUST &amp; ROAD GRIME</span>
-            </div>
-            <div class="ba-after bg-cover bg-center flex items-end p-4" id="ba-after-img" style="background-image: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80');">
-                <span class="bg-sky-500/90 text-slate-950 font-black text-[10px] uppercase px-3 py-1 rounded shadow whitespace-nowrap">AFTER: SHOWROOM SHINE</span>
-            </div>
-            <div class="ba-slider-handle" id="ba-handle">
-                <i class="fa-solid fa-arrows-left-right text-xs"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT KEEGAN -->
-    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div class="bg-slate-900/60 rounded-2xl border border-slate-800 p-6 sm:p-10 flex flex-col md:flex-row items-center gap-8">
-            <img src="logo.png" alt="" class="w-40 sm:w-48 h-auto shrink-0 rounded-2xl border border-slate-800">
-            <div>
-                <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Driven By Passion</span>
-                <h3 class="font-display text-2xl font-extrabold text-white mt-0.5">Meet Keegan Trey Higgins</h3>
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2">
-                    "At 16, I built Higgins Auto Detailing around one main promise: delivering unmatched dealership-quality results right in my clients' driveways. I treat every car like it's my own personal show car—using only premium safe chemicals, fresh microfibers, and careful precision."
-                </p>
-                <div class="mt-4 flex flex-wrap gap-4 text-xs font-semibold text-slate-400">
-                    <span><i class="fa-solid fa-shield-halved text-brand-blue mr-1"></i> Fully Equipped Mobile Setup</span>
-                    <span><i class="fa-solid fa-star text-brand-blue mr-1"></i> High Attention To Detail</span>
-                </div>
-            </div>
+        <div class="max-w-3xl mx-auto aspect-video flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-800 bg-slate-950/70 shadow-2xl">
+            <i class="fa-solid fa-circle-play text-4xl text-brand-blue" aria-hidden="true"></i>
+            <p class="text-sm font-semibold text-slate-300">Video coming soon</p>
         </div>
     </section>
 
@@ -385,10 +355,10 @@
             <form id="booking-form" class="space-y-4">
                 <div class="bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-slate-300 flex justify-between items-center gap-3">
                     <div>
-                        <span class="text-slate-500 uppercase tracking-wider text-[10px] block">Selected Estimate Summary:</span>
-                        <strong id="form-summary-text" class="text-brand-blue">Sedan / Coupe • Precision Deep Clean</strong>
+                        <span class="text-slate-500 uppercase tracking-wider text-xs block">Selected Estimate Summary:</span>
+                        <strong id="form-summary-text" class="text-brand-blue">Sedan/Coupe • Basic Interior Package</strong>
                     </div>
-                    <span id="form-summary-price" class="font-display font-bold text-base text-white">$160</span>
+                    <span id="form-summary-price" class="font-display font-bold text-base text-white">$115</span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -419,15 +389,45 @@
                 </div>
 
                 <div>
+                    <label for="f-payment-method" class="block text-sm font-bold text-slate-300 uppercase tracking-wider mb-1">Preferred Payment Method *</label>
+                    <select id="f-payment-method" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-white focus:border-brand-blue focus:outline-none">
+                        <option value="" selected disabled>Select a payment method</option>
+                        <option value="Cash App">Cash App</option>
+                        <option value="Venmo">Venmo</option>
+                        <option value="PayPal">PayPal</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                    <p class="mt-1 text-sm text-slate-400">Payment is due after the service is completed.</p>
+                </div>
+
+                <div>
                     <label for="f-notes" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Special Notes / Stain Focus (Optional)</label>
                     <textarea id="f-notes" rows="3" placeholder="Tell Keegan about specific areas needing attention..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-white focus:border-brand-blue focus:outline-none"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-gradient-to-r from-sky-400 via-brand-blue to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-black p-4 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-sky-500/20 transition">
+                <button type="submit" class="w-full bg-gradient-to-r from-sky-500 via-brand-glow to-blue-600 hover:from-sky-500 hover:to-blue-600 text-white font-bold p-4 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-sky-500/20 transition">
                     Text My Quote Request To Keegan <i class="fa-solid fa-paper-plane ml-1"></i>
                 </button>
-                <p class="text-center text-[11px] text-slate-500">Prefer to call or text directly? <a href="sms:+15175510040" class="text-brand-blue hover:underline">(517) 551-0040</a></p>
+                <p class="text-center text-xs text-slate-500">Questions? <a href="mailto:keeganhig@gmail.com" class="text-brand-blue hover:underline">Email us</a>. Booking requests will still be sent to Keegan by text.</p>
             </form>
+        </div>
+    </section>
+
+    <!-- ABOUT KEEGAN -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="bg-slate-900/60 rounded-2xl border border-slate-800 p-6 sm:p-10 flex flex-col md:flex-row items-center gap-8">
+            <img src="logo.png" alt="" class="w-40 sm:w-48 h-auto shrink-0 rounded-2xl border border-slate-800">
+            <div>
+                <span class="text-brand-blue text-sm font-bold uppercase tracking-widest">Driven By Passion</span>
+                <h3 class="font-display text-2xl font-bold text-white mt-0.5">Meet Keegan Trey Higgins</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mt-2">
+                    "At 16, I built Higgins Auto Detailing around one main promise: delivering unmatched dealership-quality results right in my clients' driveways. I treat every car like it's my own personal show car—using only premium safe chemicals, fresh microfibers, and careful precision."
+                </p>
+                <div class="mt-4 flex flex-wrap gap-4 text-sm font-semibold text-slate-400">
+                    <span><i class="fa-solid fa-shield-halved text-brand-blue mr-1"></i> Fully Equipped Mobile Setup</span>
+                    <span><i class="fa-solid fa-star text-brand-blue mr-1"></i> High Attention To Detail</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -435,8 +435,8 @@
     <footer class="mt-16 border-t border-slate-800/80 pt-8 text-center text-xs text-slate-500">
         <img src="logo.png" alt="Higgins Auto Detailing" class="w-40 mx-auto mb-3 opacity-90">
         <p class="mt-1">Mobile Car Detailing • Owned &amp; Operated by Keegan Trey Higgins</p>
-        <p class="mt-1"><a href="sms:+15175510040" class="text-brand-blue hover:underline">Text (517) 551-0040</a></p>
-        <p class="mt-4 text-[10px] text-slate-600">© 2026 Higgins Auto Detailing. All rights reserved.</p>
+        <p class="mt-1"><a href="mailto:keeganhig@gmail.com" class="text-brand-blue hover:underline">keeganhig@gmail.com</a></p>
+        <p class="mt-4 text-xs text-slate-600">© 2026 Higgins Auto Detailing. All rights reserved.</p>
     </footer>
 
     <!-- CONFIRMATION MODAL -->
@@ -470,10 +470,17 @@
         // ===== CONFIG: Keegan's booking number (digits only, with country code) =====
         const KEEGAN_PHONE = '+15175510040';
 
-        let vehicleMultiplier = 1;
-        let vehicleTypeName = "Sedan / Coupe";
-        let baseTierPrice = 160;
-        let baseTierName = "Precision Deep Clean";
+        const packagePrices = {
+            basic: { sedan: 115, truck: 140, suv: 150, xl: 175 },
+            premium: { sedan: 165, truck: 190, suv: 200, xl: 225 }
+        };
+        const packageNames = {
+            basic: 'Basic Interior Package',
+            premium: 'Premium Interior Package'
+        };
+        let vehicleKey = 'sedan';
+        let vehicleTypeName = 'Sedan/Coupe';
+        let selectedPackage = 'basic';
         let selectedAddons = [];
         let lastMessage = '';
 
@@ -481,108 +488,112 @@
         const selectedSummaryTextEl = document.getElementById('selected-summary-text');
         const formSummaryTextEl = document.getElementById('form-summary-text');
         const formSummaryPriceEl = document.getElementById('form-summary-price');
+        const petHairLevelEl = document.getElementById('pet-hair-level');
+        const petHairPriceEl = document.getElementById('pet-hair-price');
+        const petHairCheckbox = document.querySelector('.addon-checkbox[data-addon-name="Pet hair removal"]');
 
-        function currentTotal() {
-            const adjustedBase = Math.round(baseTierPrice * vehicleMultiplier);
-            const addonsTotal = selectedAddons.reduce((sum, item) => sum + item.price, 0);
-            return adjustedBase + addonsTotal;
+        function formatEstimate() {
+            const basePrice = packagePrices[selectedPackage][vehicleKey];
+            const minimum = basePrice + selectedAddons.reduce((sum, item) => sum + item.minimum, 0);
+            const hasUncappedAddon = selectedAddons.some(item => item.maximum === null);
+
+            if (hasUncappedAddon) return `$${minimum}+`;
+
+            const maximum = basePrice + selectedAddons.reduce((sum, item) => sum + item.maximum, 0);
+            return maximum === minimum ? `$${minimum}` : `$${minimum}–$${maximum}`;
+        }
+
+        function addonPriceLabel(addon) {
+            if (addon.maximum === null) return `$${addon.minimum}+`;
+            if (addon.minimum === addon.maximum) return `$${addon.minimum}`;
+            return `$${addon.minimum}–$${addon.maximum}`;
+        }
+
+        function updatePetHairPrice() {
+            const option = petHairLevelEl.selectedOptions[0];
+            const price = Number(option.dataset.price);
+            const isHeavy = petHairLevelEl.value === 'heavy';
+
+            petHairCheckbox.dataset.addonMin = price;
+            petHairCheckbox.dataset.addonMax = isHeavy ? '' : price;
+            petHairCheckbox.dataset.addonName = `Pet hair removal (${option.textContent.split(' — ')[0]})`;
+            petHairPriceEl.textContent = isHeavy ? `$${price}+` : `$${price}`;
         }
 
         function updateCalculator() {
-            const grandTotal = currentTotal();
-            totalPriceEl.textContent = `$${grandTotal}`;
+            const estimate = formatEstimate();
+            totalPriceEl.textContent = estimate;
 
-            let summaryString = `${vehicleTypeName} • ${baseTierName}`;
+            let summaryString = `${vehicleTypeName} • ${packageNames[selectedPackage]}`;
             if (selectedAddons.length > 0) {
                 summaryString += ` (+${selectedAddons.length} Add-on${selectedAddons.length > 1 ? 's' : ''})`;
             }
             selectedSummaryTextEl.textContent = summaryString;
             formSummaryTextEl.textContent = summaryString;
-            formSummaryPriceEl.textContent = `$${grandTotal}`;
+            formSummaryPriceEl.textContent = estimate;
 
-            document.querySelectorAll('.tier-card').forEach(card => {
-                const rawPrice = parseInt(card.dataset.price);
-                const displaySpan = card.querySelector('.tier-display-price');
-                if (displaySpan) displaySpan.textContent = Math.round(rawPrice * vehicleMultiplier);
+            document.querySelectorAll('[data-package-price]').forEach(price => {
+                price.textContent = packagePrices[price.dataset.packagePrice][vehicleKey];
             });
         }
 
         // Vehicle size
         document.querySelectorAll('.v-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.v-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-slate-800', 'border-brand-blue', 'text-white', 'glow-blue-sm');
-                    b.classList.add('bg-slate-900', 'border-slate-800', 'text-slate-300');
-                    const icon = b.querySelector('i');
-                    icon.classList.remove('text-brand-blue');
-                    icon.classList.add('text-slate-400');
+                document.querySelectorAll('.v-btn').forEach(vehicleButton => {
+                    const isSelected = vehicleButton === btn;
+                    const icon = vehicleButton.querySelector('i');
+                    vehicleButton.setAttribute('aria-pressed', String(isSelected));
+                    vehicleButton.classList.toggle('bg-slate-800', isSelected);
+                    vehicleButton.classList.toggle('hover:bg-slate-700', isSelected);
+                    vehicleButton.classList.toggle('border-brand-blue', isSelected);
+                    vehicleButton.classList.toggle('text-white', isSelected);
+                    vehicleButton.classList.toggle('glow-blue-sm', isSelected);
+                    vehicleButton.classList.toggle('bg-slate-900', !isSelected);
+                    vehicleButton.classList.toggle('hover:bg-slate-800', !isSelected);
+                    vehicleButton.classList.toggle('border-slate-800', !isSelected);
+                    vehicleButton.classList.toggle('text-slate-300', !isSelected);
+                    icon.classList.toggle('text-brand-blue', isSelected);
+                    icon.classList.toggle('text-slate-400', !isSelected);
                 });
-                btn.classList.add('active', 'bg-slate-800', 'border-brand-blue', 'text-white', 'glow-blue-sm');
-                btn.classList.remove('bg-slate-900', 'border-slate-800', 'text-slate-300');
-                const icon = btn.querySelector('i');
-                icon.classList.remove('text-slate-400');
-                icon.classList.add('text-brand-blue');
-
-                vehicleMultiplier = parseFloat(btn.dataset.multiplier);
+                vehicleKey = btn.dataset.vehicle;
                 vehicleTypeName = btn.dataset.vtype;
                 updateCalculator();
             });
         });
 
-        // Tier
-        document.querySelectorAll('.tier-card').forEach(card => {
-            card.addEventListener('click', () => {
-                document.querySelectorAll('.tier-card').forEach(c => {
-                    c.classList.remove('active', 'border-brand-blue', 'glow-blue-sm');
-                    c.classList.add('border-slate-800');
-                    const badge = c.querySelector('.tier-select-badge');
-                    badge.textContent = 'Select Tier';
-                    badge.classList.remove('text-brand-blue');
-                    badge.classList.add('text-slate-400');
+        // Package
+        document.querySelectorAll('.package-select').forEach(button => {
+            button.addEventListener('click', () => {
+                selectedPackage = button.dataset.package;
+                document.querySelectorAll('.package-card').forEach(card => {
+                    const isSelected = card.dataset.packageCard === selectedPackage;
+                    card.classList.toggle('active', isSelected);
+                    const selectButton = card.querySelector('.package-select');
+                    selectButton.setAttribute('aria-pressed', String(isSelected));
+                    selectButton.textContent = isSelected ? 'Selected Package' : 'Select Package';
                 });
-                card.classList.add('active', 'border-brand-blue', 'glow-blue-sm');
-                card.classList.remove('border-slate-800');
-                const badge = card.querySelector('.tier-select-badge');
-                badge.textContent = 'Selected';
-                badge.classList.add('text-brand-blue');
-                badge.classList.remove('text-slate-400');
-
-                baseTierPrice = parseInt(card.dataset.price);
-                baseTierName = card.dataset.tier;
                 updateCalculator();
             });
         });
 
         // Add-ons
-        document.querySelectorAll('.addon-checkbox').forEach(chk => {
-            chk.addEventListener('change', () => {
-                selectedAddons = [];
-                document.querySelectorAll('.addon-checkbox:checked').forEach(c => {
-                    selectedAddons.push({ name: c.dataset.addonName, price: parseInt(c.dataset.addonPrice) });
-                });
-                updateCalculator();
-            });
-        });
-
-        // Before/after slider
-        const baContainer = document.querySelector('.ba-container');
-        const baAfter = document.getElementById('ba-after-img');
-        const baHandle = document.getElementById('ba-handle');
-        let isSliding = false;
-
-        function setSliderPosition(x) {
-            const rect = baContainer.getBoundingClientRect();
-            let pos = ((x - rect.left) / rect.width) * 100;
-            pos = Math.min(95, Math.max(5, pos));
-            baAfter.style.width = `${pos}%`;
-            baHandle.style.left = `${pos}%`;
+        function updateSelectedAddons() {
+            selectedAddons = Array.from(document.querySelectorAll('.addon-checkbox:checked'), checkbox => ({
+                    name: checkbox.dataset.addonName,
+                    minimum: Number(checkbox.dataset.addonMin),
+                    maximum: checkbox.dataset.addonMax === '' ? null : Number(checkbox.dataset.addonMax)
+                }));
+            updateCalculator();
         }
-        baContainer.addEventListener('mousedown', (e) => { isSliding = true; setSliderPosition(e.clientX); });
-        window.addEventListener('mouseup', () => { isSliding = false; });
-        window.addEventListener('mousemove', (e) => { if (isSliding) setSliderPosition(e.clientX); });
-        baContainer.addEventListener('touchstart', (e) => { isSliding = true; setSliderPosition(e.touches[0].clientX); }, { passive: true });
-        window.addEventListener('touchend', () => { isSliding = false; });
-        window.addEventListener('touchmove', (e) => { if (isSliding) setSliderPosition(e.touches[0].clientX); }, { passive: true });
+
+        document.querySelectorAll('.addon-checkbox').forEach(chk => {
+            chk.addEventListener('change', updateSelectedAddons);
+        });
+        petHairLevelEl.addEventListener('change', () => {
+            updatePetHairPrice();
+            if (petHairCheckbox.checked) updateSelectedAddons();
+        });
 
         // Booking -> pre-filled SMS to Keegan
         const bookingForm = document.getElementById('booking-form');
@@ -602,11 +613,12 @@
                 `Name: ${val('f-name')}`,
                 `Phone: ${val('f-phone')}`,
                 `Vehicle: ${val('f-vehicle')} (${vehicleTypeName})`,
-                `Package: ${baseTierName}`,
-                `Add-ons: ${selectedAddons.length ? selectedAddons.map(a => a.name).join(', ') : 'None'}`,
-                `Estimate: $${currentTotal()}`,
+                `Package: ${packageNames[selectedPackage]}`,
+                `Add-ons: ${selectedAddons.length ? selectedAddons.map(addon => `${addon.name} (${addonPriceLabel(addon)})`).join(', ') : 'None'}`,
+                `Estimate: ${formatEstimate()}`,
                 `Preferred: ${formatDate(val('f-date'))}`,
-                `Address: ${val('f-address')}`
+                `Address: ${val('f-address')}`,
+                `Preferred payment method: ${val('f-payment-method')}`
             ];
             const notes = val('f-notes');
             if (notes) lines.push(`Notes: ${notes}`);
@@ -645,6 +657,8 @@
             bookingForm.reset();
         });
 
+        document.querySelector('.v-btn[aria-pressed="true"]').click();
+        updatePetHairPrice();
         updateCalculator();
     </script>
 </body>

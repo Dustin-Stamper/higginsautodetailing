@@ -222,17 +222,38 @@
         }
         .video-grid, .photo-grid { display: grid; gap: 0.5rem; }
         .video-grid { grid-template-columns: minmax(0, 1fr); }
-        .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .photo-card {
-            position: relative;
+        .photo-grid { grid-template-columns: minmax(0, 760px); justify-content: center; }
+        .photo-gallery-card {
             overflow: hidden;
             border: 1px solid var(--border);
             border-radius: 6px;
             background-color: var(--surface);
-            padding: 0;
             text-align: left;
         }
-        .photo-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+        .photo-collage {
+            position: relative;
+            display: grid;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            gap: 0.25rem;
+        }
+        .photo-collage-item { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+        .photo-collage-item:first-child { grid-column: span 2; grid-row: span 2; }
+        .photo-collage-item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .photo-count {
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background-color: rgb(var(--bg-rgb) / 0.9);
+            color: var(--text);
+            padding: 0.3rem 0.55rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
         .photo-label {
             position: absolute;
             top: 0.6rem;
@@ -249,8 +270,6 @@
         }
         #photo-lightbox img { max-height: 72vh; max-width: min(88vw, 1100px); object-fit: contain; }
         @media (min-width: 640px) { .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-        @media (min-width: 1024px) { .photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-
         details > summary { cursor: pointer; }
         details > summary::marker { color: var(--blue); }
         details > summary:hover { color: var(--blue); }
@@ -507,25 +526,34 @@
         <div>
             <h3 class="section-label mb-3">Photos</h3>
             <div id="showcase-photos" class="photo-grid">
-                <button type="button" class="photo-card" data-lightbox-alt="Clean Kia front cabin after interior detailing" aria-label="View photo: Clean Kia front cabin after interior detailing">
-                    <img src="assets/photos/IMG_4241.JPG" alt="Clean Kia front cabin after interior detailing" width="2160" height="2880" loading="lazy" decoding="async">
-                    <span class="photo-label">After</span>
-                </button>
-                <button type="button" class="photo-card" data-lightbox-alt="Clean rear cabin of an SUV after a deep interior clean" aria-label="View photo: Clean rear cabin of an SUV after a deep interior clean">
-                    <img src="assets/photos/IMG_4242.JPG" alt="Clean rear cabin of an SUV after a deep interior clean" width="1440" height="1920" loading="lazy" decoding="async">
-                    <span class="photo-label">After</span>
-                </button>
-                <button type="button" class="photo-card" data-lightbox-alt="Rear cargo area of an SUV during interior detailing" aria-label="View photo: Rear cargo area of an SUV during interior detailing">
-                    <img src="assets/photos/IMG_4243.JPG" alt="Rear cargo area of an SUV during interior detailing" width="1440" height="1920" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="photo-card" data-lightbox-alt="SUV front cabin before interior detailing, with debris on the floor" aria-label="View photo: SUV front cabin before interior detailing">
-                    <img src="assets/photos/IMG_4244.JPG" alt="SUV front cabin before interior detailing, with debris on the floor" width="1440" height="1920" loading="lazy" decoding="async">
-                    <span class="photo-label">Before</span>
-                </button>
-                <button type="button" class="photo-card" data-lightbox-alt="SUV rear floor before interior detailing, with visible dirt and debris" aria-label="View photo: SUV rear floor before interior detailing">
-                    <img src="assets/photos/IMG_4245.JPG" alt="SUV rear floor before interior detailing, with visible dirt and debris" width="1440" height="1920" loading="lazy" decoding="async">
-                    <span class="photo-label">Before</span>
-                </button>
+                <article class="photo-gallery-card">
+                    <div class="p-3 sm:p-4">
+                        <h4 class="font-display text-lg font-bold text-white">Kia Sorento</h4>
+                        <p class="mt-1 text-xs text-slate-400">Interior detail · 5 photos</p>
+                    </div>
+                    <button id="showcase-gallery" type="button" class="photo-collage w-full border-0 bg-slate-950 p-1" aria-label="View all 5 Kia Sorento detailing photos">
+                        <span class="photo-collage-item">
+                            <img src="assets/photos/IMG_4241.JPG" alt="Clean Kia Sorento front cabin after interior detailing" width="2160" height="2880" loading="lazy" decoding="async">
+                            <span class="photo-label">After</span>
+                        </span>
+                        <span class="photo-collage-item">
+                            <img src="assets/photos/IMG_4242.JPG" alt="Clean rear cabin of a Kia Sorento after a deep interior clean" width="1440" height="1920" loading="lazy" decoding="async">
+                            <span class="photo-label">After</span>
+                        </span>
+                        <span class="photo-collage-item">
+                            <img src="assets/photos/IMG_4243.JPG" alt="Rear cargo area of a Kia Sorento during interior detailing" width="1440" height="1920" loading="lazy" decoding="async">
+                        </span>
+                        <span class="photo-collage-item">
+                            <img src="assets/photos/IMG_4244.JPG" alt="Kia Sorento front cabin before interior detailing, with debris on the floor" width="1440" height="1920" loading="lazy" decoding="async">
+                            <span class="photo-label">Before</span>
+                        </span>
+                        <span class="photo-collage-item">
+                            <img src="assets/photos/IMG_4245.JPG" alt="Kia Sorento rear floor before interior detailing, with visible dirt and debris" width="1440" height="1920" loading="lazy" decoding="async">
+                            <span class="photo-label">Before</span>
+                        </span>
+                        <span class="photo-count">5 photos · Click to view</span>
+                    </button>
+                </article>
             </div>
         </div>
     </section>
@@ -781,7 +809,8 @@
         };
         // To add a video, copy one entry and set its MP4 path, caption, and optional poster.
         const galleryVideos = [
-            { src: 'detailing-showcase-1.mp4', caption: 'Interior detailing in progress', poster: '' }
+            { src: 'detailing-showcase-1.mp4', caption: 'Interior detailing in progress', poster: '' },
+            { src: 'detailing-showcase-2.mp4', caption: 'Kia Sorento interior detail', poster: '' }
         ];
         let vehicleKey = 'sedan';
         let vehicleTypeName = 'Sedan/Coupe';
@@ -1024,7 +1053,8 @@
             if (event.key === 'Escape') closeConfirmation();
         });
 
-        const photoCards = Array.from(document.querySelectorAll('#showcase-photos .photo-card'));
+        const photoGallery = document.getElementById('showcase-gallery');
+        const galleryPhotos = Array.from(photoGallery.querySelectorAll('img'));
         const photoLightbox = document.getElementById('photo-lightbox');
         const lightboxImage = document.getElementById('lightbox-image');
         const lightboxCaption = document.getElementById('lightbox-caption');
@@ -1033,9 +1063,8 @@
         let previousBodyOverflow = '';
 
         function showLightboxPhoto(index) {
-            currentPhotoIndex = (index + photoCards.length) % photoCards.length;
-            const card = photoCards[currentPhotoIndex];
-            const image = card.querySelector('img');
+            currentPhotoIndex = (index + galleryPhotos.length) % galleryPhotos.length;
+            const image = galleryPhotos[currentPhotoIndex];
             lightboxImage.src = image.src;
             lightboxImage.alt = image.alt;
             lightboxCaption.textContent = image.alt;
@@ -1061,7 +1090,7 @@
             if (photoReturnFocus) photoReturnFocus.focus();
         }
 
-        photoCards.forEach((card, index) => card.addEventListener('click', () => openPhotoLightbox(index)));
+        photoGallery.addEventListener('click', () => openPhotoLightbox(0));
         document.getElementById('lightbox-close').addEventListener('click', closePhotoLightbox);
         document.getElementById('lightbox-previous').addEventListener('click', () => showLightboxPhoto(currentPhotoIndex - 1));
         document.getElementById('lightbox-next').addEventListener('click', () => showLightboxPhoto(currentPhotoIndex + 1));
